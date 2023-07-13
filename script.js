@@ -36,7 +36,7 @@ function createLeaderboard(songArr) {
 async function getSongs() {
   accessToken = await refreshAccessToken();
   // Return the fetch promise here
-  return fetch('https://api.spotify.com/v1/playlists/4GtQVhGjAwcHFz82UKy3Ca', {
+  return fetch('https://api.spotify.com/v1/playlists/4ZfPHff7Bf2ZEvvxJ5ZDWe', {
     headers: {
       'Authorization': 'Bearer ' + accessToken
     }
