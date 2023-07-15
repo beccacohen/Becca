@@ -63,8 +63,6 @@ async function createSongArr() {
   createLeaderboard(songArr);
 }
 
-
-
 //access refresh token
 async function refreshAccessToken() {
   return fetch('https://accounts.spotify.com/api/token', {
@@ -140,10 +138,12 @@ function handleSongClick(selectedSong) {
     songButton1.style.display = 'none';
     songButton2.style.display = 'none';
     displayFinalRankings();
+    var saveButton = document.getElementById('save-button');
+    saveButton.style.display = '';
     saveLeaderboard();
     return;
   }
-
+  
   songButton1.textContent = comparisonArr[comparisonIndex].song1;
   songButton2.textContent = comparisonArr[comparisonIndex].song2;
 }
