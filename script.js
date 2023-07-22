@@ -13,8 +13,8 @@ function createComparisonArr(songArr) {
   // create an array of all possible song comparisons
   // each comparison will be an object with two songs
 
-  // create all 2-song comparisons
   for (var i = 0; i < songArr.length; i++) {
+    // create all 2-song comparisons
     for (var j = i + 1; j < songArr.length; j++) {
       comparisonArr.push({ song1: songArr[i], song2: songArr[j]});
     }
@@ -80,14 +80,6 @@ async function refreshAccessToken() {
   })
 }
 
-async function compareSongs() {
-  // both songs are buttons
-  // when a song is clicked call a function that takes the chosen song as a parameter
-  // the function will add the song comparison to the history array and update the leaderboard
-  // the funtion will then display the next two songs to be compared
-  // the function will check if the next two songs are in the history array
-  // if so it will display the next two songs
-}
 
 function displayFinalRankings() {
   var rankingsList = document.getElementById('rankingsList');
@@ -125,7 +117,6 @@ function handleSongClick(selectedSong) {
 
   // update leaderboard
   // go to next comparison
-  // update button text
 
   var songButton1 = document.getElementById('song-button1');
   var songButton2 = document.getElementById('song-button2');
@@ -137,13 +128,17 @@ function handleSongClick(selectedSong) {
     // hide buttons
     songButton1.style.display = 'none';
     songButton2.style.display = 'none';
+
     displayFinalRankings();
     var saveButton = document.getElementById('save-button');
     saveButton.style.display = '';
     saveLeaderboard();
     return;
   }
-  
+
+
+
+  // update button text
   songButton1.textContent = comparisonArr[comparisonIndex].song1;
   songButton2.textContent = comparisonArr[comparisonIndex].song2;
 }
@@ -160,9 +155,6 @@ async function initialize() {
 
 }
 
-initialize();
-
-
 async function getAccounts() {
   return fetch(
     'http://demo8229037.mockable.io/swiftsorter/accounts'
@@ -170,6 +162,27 @@ async function getAccounts() {
   .then(function (response) {
     return response.json();
   });
+}
+
+async function logout() {
+  // delete welcome message
+  var welcomeMessage = document.getElementById('welcome-message');
+  welcomeMessage.textContent = '';
+
+  // show login form
+  var loginForm = document.getElementsByClassName('login-container')[0];
+  for (var i = 0; i < loginForm.children.length; i++) {
+    loginForm.children[i].style.display = '';
+  }
+
+  // reset cur_account
+  cur_account.isLoggedIn = false;
+  cur_account.username = '';
+  cur_account.id = '';
+
+  // hide logout button
+  var logoutButton = document.getElementById('logout-button');
+  logoutButton.style.display = 'none';
 }
 
 async function login() {
@@ -182,19 +195,32 @@ async function login() {
 
   accounts["login"].forEach(function(account) {
     if (account.username === username && account.password === password) {
+      // wipe input fields
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+
       // valid account
       cur_account.isLoggedIn = true
       cur_account.username = account.username
       cur_account.id = account.id
 
       // Create element to display username
-      var usernameElement = document.createElement('h2');
-      usernameElement.textContent = 'Welcome ' + cur_account.username + '!';
-      document.body.appendChild(usernameElement);
+      var welcomeMessage = document.getElementById('welcome-message');
+      welcomeMessage.textContent = 'Welcome ' + cur_account.username + '!';
+
+      // hide login form
+      var loginForm = document.getElementsByClassName('login-container')[0];
+      for (var i = 0; i < loginForm.children.length; i++) {
+        loginForm.children[i].style.display = 'none';
+      }
 
       // erase error message when user logs in successfully
       var errorMessage = document.getElementById('error-message');
       errorMessage.textContent = '';
+
+      // show logout button
+      var logoutButton = document.getElementById('logout-button');
+      logoutButton.style.display = '';
     }
   });
   
@@ -204,3 +230,5 @@ async function login() {
     errorMessage.textContent = 'Invalid username or password';
   }
 }
+
+initialize();

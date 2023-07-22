@@ -11,12 +11,21 @@
   </div>
 
   <h1>Taylor Swift Song Sorter</h1>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, minima odio earum eum voluptatum itaque facilis tempore voluptate consequatur? Maiores magni incidunt libero at fuga voluptatem ex placeat!</p>
+  
   
   <!-- User Login Section -->
-  <div class="login-container">
+  <div class="login-container">    
     <input id = "username" type="text" placeholder="Username">
     <input id = "password" type="password" placeholder="Password">
-    <button onclick= "login()">Login</button>
+    <button id = "login-button" onclick= "login()">Login</button>
+  </div>
+
+  <h2 id = "welcome-message"></h2>
+  
+  <!-- User Log Out Section -->
+  <div class="logout-container"> 
+    <button id = "logout-button" onclick= "logout()" style="display: none;">Log Out</button>
   </div>
   
   <!-- Error Message -->
@@ -28,10 +37,11 @@
     <button id="song-button2"></button>
   </div>
   
+  <h2 id = "progress"></h2>
   <!-- Rankings List -->
   <ul id="rankingsList"></ul>
 
-  <button id="save-button" style="display: none;">save</button>
+  <button id="save-button" style="display: none;">Save</button>
 
   <script src="script.js"></script>
 </body>
