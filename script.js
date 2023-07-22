@@ -126,10 +126,17 @@ function handleSongClick(selectedSong) {
   comparisonIndex += 1;
 
 
+  // update progress %
+  var progress = document.getElementById('progress');
+  progress.textContent = Math.round((comparisonIndex / comparisonArr.length) * 100) + '%';
+
   if (comparisonIndex >= comparisonArr.length) {
     // hide buttons
     songButton1.style.display = 'none';
     songButton2.style.display = 'none';
+
+    // hide progress
+    progress.style.display = 'none';
 
 
     displayFinalRankings();
@@ -140,6 +147,7 @@ function handleSongClick(selectedSong) {
   }
 
 
+  
   // update button text
   songButton1.textContent = comparisonArr[comparisonIndex].song1;
   songButton2.textContent = comparisonArr[comparisonIndex].song2;
