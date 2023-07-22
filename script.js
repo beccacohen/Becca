@@ -113,6 +113,7 @@ songButton2.addEventListener('click', function () {
   handleSongClick(songButton2);
 });
 
+
 function handleSongClick(selectedSong) {
 
   // update leaderboard
@@ -124,10 +125,12 @@ function handleSongClick(selectedSong) {
   leaderboard[selectedSong.textContent] += 1;
   comparisonIndex += 1;
 
+
   if (comparisonIndex >= comparisonArr.length) {
     // hide buttons
     songButton1.style.display = 'none';
     songButton2.style.display = 'none';
+
 
     displayFinalRankings();
     var saveButton = document.getElementById('save-button');
@@ -135,7 +138,6 @@ function handleSongClick(selectedSong) {
     saveLeaderboard();
     return;
   }
-
 
 
   // update button text
@@ -154,6 +156,8 @@ async function initialize() {
   songButton2.textContent = comparisonArr[comparisonIndex].song2;
 
 }
+
+
 
 async function getAccounts() {
   return fetch(
@@ -230,5 +234,16 @@ async function login() {
     errorMessage.textContent = 'Invalid username or password';
   }
 }
+
+
+// add event listener to password input
+var passwordInput = document.getElementById('password');
+passwordInput.addEventListener('keyup', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    document.getElementById('login-button').click();
+  }
+});
+
 
 initialize();
