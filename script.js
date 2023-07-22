@@ -113,6 +113,11 @@ songButton2.addEventListener('click', function () {
   handleSongClick(songButton2);
 });
 
+function saveLeaderboard() {
+  // This is where you would save the leaderboard to a database
+  // We do not have an actual non-mock database so we do nothing
+  return;
+}
 
 function handleSongClick(selectedSong) {
 
@@ -147,7 +152,7 @@ function handleSongClick(selectedSong) {
   }
 
 
-  
+
   // update button text
   songButton1.textContent = comparisonArr[comparisonIndex].song1;
   songButton2.textContent = comparisonArr[comparisonIndex].song2;
