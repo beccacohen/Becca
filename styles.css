@@ -1,10 +1,26 @@
 body {
     text-align: center;
+    background-color: rgba(243, 201, 147, 0.2);
+    padding: 1.25rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #3B4059;
 }
 
-h1 {
-    margin-top: 20px;
+#logo {
+    display: flex;
+    width: 11.5rem;
 }
+
+h2 {
+    margin-top: 1.25rem;
+    font-weight: bold;
+    font-size: 4rem;
+    max-width: 60rem;
+    /* Set the maximum width for the .info container */
+    margin: 0 auto;
+    /* Center the .info container horizontally */
+}
+
 ul {
     list-style-type: none;
 }
