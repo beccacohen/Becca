@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     text-align: center;
     background-color: rgba(243, 201, 147, 0.2);
@@ -72,7 +73,7 @@ button#song-button2,
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-bottom: 0.8rem;
-    flex-basis: 48%;
+    flex-basis: 46%;
     font-family: 'Courier New', Courier, monospace;
     border-radius: 0.4rem;
 }
@@ -217,13 +218,13 @@ ul#rankingsList {
 @media screen and (min-width: 768px) {
     #songContainer {
         flex-direction: row;
-        justify-content: space-between;
-        height: 8rem;
+        justify-content: space-evenly;
     }
 
     button#song-button1,
     button#song-button2 {
-        font-size: 3rem;
+        font-size: 2rem;
+        flex-basis: 42%;
     }
 
     #logo {
@@ -236,15 +237,11 @@ ul#rankingsList {
 
     h2 {
         padding-top: 1rem;
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     div#logoContainer {
-        padding-bottom: 2rem;
-    }
-
-    .login-container {
-        padding: 0rem;
+        padding-bottom: 1.5rem;
     }
 
     ul#rankingsList {
@@ -252,6 +249,22 @@ ul#rankingsList {
     }
 
     .info {
-        font-size: 2rem;
+        width: 62%;
+        font-size: 1.4rem;
+    }
+
+    input#username,
+    input#password {
+        font-size: 1.2rem;
+    }
+
+    div#error-message {
+        font-size: .8rem;
+        padding-top: .1rem;
+        padding-bottom: .1rem;
+    }
+
+    p#welcome-message {
+        font-size: 1.5rem;
     }
 }
