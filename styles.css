@@ -20,8 +20,7 @@ body {
 .login-container input,
 .login-container button {
     display: block;
-    margin-bottom: 10px;
-    width: 100%;
+    margin-bottom: .4rem;
 }
 
 .info {
@@ -50,7 +49,8 @@ ul {
 button#song-button1,
 button#song-button2,
 button#login-button,
-button#logout-button {
+button#logout-button,
+button#save-button {
     display: inline-block;
     padding: 0.625rem 1.25rem;
     font-size: 1.25rem;
@@ -76,13 +76,15 @@ button#song-button2 {
 
 #song-button1:hover,
 #song-button2:hover,
-button#login-button:hover {
+button#login-button:hover,
+button#save-button:hover {
     background-color: #602732;
 }
 
 #songContainer {
     display: flex;
     flex-direction: column;
+    margin-top: 1rem;
 }
 
 input#username,
@@ -108,14 +110,18 @@ div#logoContainer {
     padding-bottom: 2rem;
 }
 
+ul#rankingsList {
+    font-size: 1rem;
+}
+
 /* CSS for Hamburger Menu Icon */
 .hamburger-menu {
     display: none;
     width: 30px;
     height: 20px;
     position: absolute;
-    top: 5rem;
-    right: 6rem;
+    top: 3rem;
+    right: 4rem;
     cursor: pointer;
     z-index: 1000;
     /* Ensure the icon stays on top of other elements */
@@ -135,29 +141,24 @@ div#logoContainer {
     background-color: #3B4059;
 }
 
-.hamburger-menu span:nth-child(1) {
-    top: 0;
-}
-
 .hamburger-menu span:nth-child(2) {
-    top: 8px;
+    top: .5rem;
 }
 
 .hamburger-menu span:nth-child(3) {
-    top: 16px;
+    top: 1rem;
 }
 
 /* CSS for Hamburger Menu Content */
 .hamburger-content {
     display: block;
     background-color: #fdf4e9;
-    padding: 1.25rem 0rem 0rem 0rem;
     font-family: 'Courier New', Courier, monospace;
     color: #3B4059;
     text-align: center;
     position: absolute;
-    top: 5rem;
-    right: 6rem;
+    top: 4rem;
+    right: 3.5rem;
     z-index: 999;
     /* Ensure the content stays on top of other elements */
 }
@@ -186,13 +187,11 @@ div#logoContainer {
 
     #songContainer {
         flex-direction: column;
-        /* Adjust as needed for small screens */
     }
 
     button#song-button1,
     button#song-button2 {
         font-size: 2.188rem;
-        /* Reduce font size for smaller screens */
     }
 
     .info {
@@ -234,14 +233,18 @@ div#logoContainer {
     }
 
     h2 {
-        padding-top: 3rem;
+        padding-top: 1rem;
     }
 
     div#logoContainer {
-        padding-bottom: 3rem;
+        padding-bottom: 2rem;
     }
 
     .login-container {
         padding: 0rem;
+    }
+
+    ul#rankingsList {
+        font-size: 1.5rem;
     }
 }
