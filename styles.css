@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     text-align: center;
     background-color: rgba(243, 201, 147, 0.2);
@@ -8,12 +12,12 @@ body {
 
 #logo {
     display: flex;
-    width: 11.5rem;
+    width: 7.5rem;
 }
 
 /* Login container styles */
 .login-container {
-    padding: 1rem;
+    padding-top: 0.5rem;
     text-align: center;
 }
 
@@ -25,7 +29,7 @@ body {
 
 .info {
     font-family: "Proxima Nova", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     max-width: 60rem;
     /* Set the maximum width for the .info container */
     margin: 0 auto;
@@ -35,7 +39,7 @@ body {
 h2 {
     margin-top: 1.25rem;
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 2rem;
     max-width: 60rem;
     /* Set the maximum width for the .info container */
     margin: 0 auto;
@@ -46,11 +50,15 @@ ul {
     list-style-type: none;
 }
 
+button#login-button {
+    font-size: 1rem;
+}
+
 button#song-button1,
 button#song-button2,
-button#login-button,
-button#logout-button,
-button#save-button {
+#login-button,
+#logout-button,
+#save-button {
     display: inline-block;
     padding: 0.625rem 1.25rem;
     font-size: 1.25rem;
@@ -63,7 +71,7 @@ button#save-button {
     border-radius: 0.25rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.8rem;
     flex-basis: 48%;
     font-family: 'Courier New', Courier, monospace;
     border-radius: 0.4rem;
@@ -89,16 +97,15 @@ button#save-button:hover {
 
 input#username,
 input#password {
-    font-size: 1.4rem;
-    border-radius: .4rem;
+    border-radius: 0.4rem;
 }
 
 div#error-message {
-    font-size: 1.2rem;
+    font-size: .6rem;
 }
 
 p#welcome-message {
-    font-size: 2rem;
+    font-size: 1rem;
     margin: 0.1rem;
 }
 
@@ -118,13 +125,11 @@ ul#rankingsList {
 .hamburger-menu {
     display: none;
     width: 30px;
-    height: 20px;
     position: absolute;
     top: 3rem;
-    right: 4rem;
+    right: 2rem;
     cursor: pointer;
     z-index: 1000;
-    /* Ensure the icon stays on top of other elements */
 }
 
 .hamburger-menu span {
@@ -191,12 +196,7 @@ ul#rankingsList {
 
     button#song-button1,
     button#song-button2 {
-        font-size: 2.188rem;
-    }
-
-    .info {
-        font-size: 2rem;
-        max-width: 100%;
+        font-size: 1.5rem;
     }
 
     .hamburger-content {
@@ -210,6 +210,7 @@ ul#rankingsList {
     .hamburger-menu {
         display: block;
     }
+
 }
 
 /* Styles for larger screens (minimum width of 768px) */
@@ -217,11 +218,12 @@ ul#rankingsList {
     #songContainer {
         flex-direction: row;
         justify-content: space-between;
+        height: 8rem;
     }
 
     button#song-button1,
     button#song-button2 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     #logo {
@@ -234,6 +236,7 @@ ul#rankingsList {
 
     h2 {
         padding-top: 1rem;
+        font-size: 4rem;
     }
 
     div#logoContainer {
@@ -246,5 +249,9 @@ ul#rankingsList {
 
     ul#rankingsList {
         font-size: 1.5rem;
+    }
+
+    .info {
+        font-size: 2rem;
     }
 }
