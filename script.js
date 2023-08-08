@@ -106,6 +106,25 @@ songButton2.addEventListener('click', function () {
 function saveLeaderboard() {
   // This is where you would save the leaderboard to a database
   // We do not have an actual non-mock database so we do nothing
+  var rankingsList = document.getElementById('rankingsList');
+
+  // sort leaderboard by value
+  var sortedLeaderboard = Object.keys(leaderboard).sort(function (a, b) {
+    return leaderboard[b] - leaderboard[a];
+  });
+
+  var saveStruct = {
+    id: cur_account.id,
+    username: cur_account.username,
+    leaderboard: sortedLeaderboard
+  }
+
+  // save leaderboard to database w/ user id and username as key
+  fetch('https://demo8229037.mockable.io/swiftsorter/leaderboard', {
+    method: 'POST',
+    body: JSON.stringify(saveStruct)
+  });
+
   return;
 }
 
