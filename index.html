@@ -16,7 +16,7 @@
   <header>
     <!-- Logo Section -->
     <div id="logoContainer">
-      <img id="logo" src="images/logo.png" alt="Logo">
+      <img id="logo" src="images/logo.png" alt="Logo" name="SwiftSorter Logo">
     </div>
     <nav>
       <!-- Hamburger Menu Icon -->
@@ -33,21 +33,33 @@
           <input id="username" type="text" placeholder="Username">
           <input id="password" type="password" placeholder="Password">
           <!-- Error Message -->
-          <div id="error-message"></div>
+          <div id="login-error-message"></div>
           <button id="login-button" onclick="login()">Login</button>
+          <button id="create-account-button" onclick="signup()">Create Account</button>
         </div>
         <!-- User Logout Section -->
         <p id="welcome-message"></p>
         <div class="logout-container">
           <button id="logout-button" onclick="logout()" style="display: none;">Logout</button>
         </div>
+        
+        <div class="signup-container" style = "display: none;">
+          <input id="new-username" type="text" placeholder="Username">
+          <input id="new-password" type="password" placeholder="Password">
+          <input id="confirm-password" type="password" placeholder="Confirm Password">
+          <!-- Error Message -->
+          <div id="signup-error-message"></div>
+          <button id="signup-button" onclick="createAccount()">Sign Up</button>
+          <button id="back-button" onclick="back()">Back</button>
+        </div>
+      </div>
     </nav>
   </header>
 
 
   <h2>Taylor Swift Song Sorter</h2>
-  <p class="info">Pick what song you like better in each battle to get an accurate list of your favorite songs from
-    Taylor Swift's entire discography. If you make a mistake DO NOT click back page in your browser as it will erase all your progress.</p>
+  <p class="info">Pick what song you like better in each battle to get an accurate list of your favorite songs from Taylor Swift's entire discography.</p>
+  <p class="disclaimer">If you make a mistake DO NOT click back page in your browser as it will erase all your progress.</p>
 
 
 
