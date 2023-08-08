@@ -102,6 +102,7 @@ input#confirm-password,
 input#new-password,
 input#new-username {
     border-radius: 0.4rem;
+    width: 50%;
 }
 
 div#login-error-message,
@@ -269,6 +270,7 @@ ul#rankingsList {
         font-size: 1.2rem;
         display: block;
         margin: auto;
+        width: 92%;
     }
 
     div#login-error-message,
@@ -331,6 +333,17 @@ ul#rankingsList {
     input#new-password,
     input#new-username {
         display: inline-block;
+    }
+
+    input#username,
+    input#password{
+        width: 40%;
+    }
+
+    input#confirm-password,
+    input#new-password,
+    input#new-username {
+        width: 28%;
     }
 
     button#login-button,
