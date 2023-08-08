@@ -13,26 +13,17 @@ body {
 
 #logo {
     display: flex;
-    width: 7.5rem;
+    width: 6.5rem;
 }
 
-/* Login container styles */
-.login-container {
-    padding-top: 0.5rem;
-    text-align: center;
-}
-
-.login-container input,
-.login-container button {
-    display: block;
+.login-container button,
+.signup-container input {
     margin-bottom: .4rem;
 }
 
 .info {
     font-family: "Proxima Nova", sans-serif;
     font-size: 1rem;
-    max-width: 60rem;
-    /* Set the maximum width for the .info container */
     margin: 0 auto;
     /* Center the .info container horizontally */
 }
@@ -45,21 +36,29 @@ h2 {
     /* Set the maximum width for the .info container */
     margin: 0 auto;
     /* Center the .info container horizontally */
+    padding-bottom: .5rem;
 }
 
 ul {
     list-style-type: none;
 }
 
-button#login-button {
-    font-size: 1rem;
+button#login-button,
+button#create-account-button,
+button#signup-button,
+button#back-button,
+button#logout-button {
+    font-size: .6rem;
 }
 
 button#song-button1,
 button#song-button2,
 #login-button,
 #logout-button,
-#save-button {
+#save-button,
+#create-account-button,
+#signup-button,
+#back-button {
     display: inline-block;
     padding: 0.625rem 1.25rem;
     font-size: 1.25rem;
@@ -86,7 +85,8 @@ button#song-button2 {
 #song-button1:hover,
 #song-button2:hover,
 button#login-button:hover,
-button#save-button:hover {
+button#save-button:hover,
+button#create-account-button:hover {
     background-color: #602732;
 }
 
@@ -97,11 +97,15 @@ button#save-button:hover {
 }
 
 input#username,
-input#password {
+input#password,
+input#confirm-password,
+input#new-password,
+input#new-username {
     border-radius: 0.4rem;
 }
 
-div#error-message {
+div#login-error-message,
+div#signup-error-message {
     font-size: .6rem;
 }
 
@@ -185,6 +189,13 @@ ul#rankingsList {
     background-color: #602732;
 }
 
+.disclaimer {
+    font-size: 0.8rem;
+    font-family: "Proxima Nova", sans-serif;
+    width: 75%;
+    display: inline-block;
+}
+
 /* Responsive styles for smaller screens */
 @media screen and (max-width: 768px) {
     .hamburger-content {
@@ -201,20 +212,19 @@ ul#rankingsList {
     }
 
     .hamburger-content {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 
     .hamburger-content a {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 
     .hamburger-menu {
         display: block;
     }
-
 }
 
-/* Styles for larger screens (minimum width of 768px) */
+/* Styles for tablets screens (minimum width of 768px) */
 @media screen and (min-width: 768px) {
     #songContainer {
         flex-direction: row;
@@ -228,13 +238,11 @@ ul#rankingsList {
     }
 
     #logo {
-        width: 10rem;
+        width: 9rem;
+        padding-left: 1rem;
     }
 
-    .hamburger-content {
-        background-color: transparent;
-    }
-
+    
     h2 {
         padding-top: 1rem;
         font-size: 3rem;
@@ -249,22 +257,86 @@ ul#rankingsList {
     }
 
     .info {
-        width: 62%;
-        font-size: 1.4rem;
+        width: 85%;
+        font-size: 2rem;
     }
 
     input#username,
-    input#password {
+    input#password,
+    input#confirm-password,
+    input#new-password,
+    input#new-username {
         font-size: 1.2rem;
+        display: block;
+        margin: auto;
     }
 
-    div#error-message {
+    div#login-error-message,
+    div#signup-error-message {
         font-size: .8rem;
         padding-top: .1rem;
         padding-bottom: .1rem;
+        display: block;
+        width: 100%;
     }
-
+    
     p#welcome-message {
         font-size: 1.5rem;
+    }
+    
+    button#login-button,
+    button#create-account-button,
+    button#signup-button,
+    button#back-button {
+        font-size: 1rem;
+    }
+    .disclaimer {
+        font-size: 1.2rem;
+        width: 56%;
+    }
+
+    .hamburger-content {
+        font-size: 2rem;
+    }
+}
+
+/* Styles for laptop screens (minimum width of 1024px) */
+@media screen and (min-width: 1024px) {
+    .info{
+        width: 82%;
+    }
+
+    .disclaimer {
+        font-size: 1.4rem;
+        width: 43%;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+    
+    div#login-error-message,
+    div#signup-error-message {
+        font-size: 1rem;
+    }
+
+    .hamburger-content {
+        background-color: transparent;
+        font-size: 2rem;
+    }
+
+    input#username,
+    input#password,
+    input#confirm-password,
+    input#new-password,
+    input#new-username {
+        display: inline-block;
+    }
+
+    button#login-button,
+    button#create-account-button,
+    button#signup-button,
+    button#back-button {
+        font-size: 1.2rem;
     }
 }

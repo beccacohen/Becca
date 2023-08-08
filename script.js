@@ -343,5 +343,31 @@ passwordInput.addEventListener('keyup', function (event) {
   }
 });
 
+const resizeScreen = () => {
+  // get width of screen
+  // if width is less than 768px, hide hamburger menu
+  // if width is more than 768px, display hamburger menu
+
+  var menuContent = document.querySelector(".hamburger-content");
+  if (window.innerWidth > 768) {
+    menuContent.style.display = 'block';
+  }
+  else {
+    menuContent.style.display = 'none';
+  }
+};
+
+window.addEventListener('resize', resizeScreen);
+
+// hamburger menu
+function toggleMenu() {
+  var menuContent = document.querySelector(".hamburger-content");
+  if (menuContent.style.display === "block") {
+    menuContent.style.display = "none";
+  } else {
+    menuContent.style.display = "block";
+  }
+}
+
 
 initialize();
