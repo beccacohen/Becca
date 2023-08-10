@@ -2,6 +2,11 @@
 
 Swift Sorter is a web-based application designed to simplify the process of ranking songs. It presents users with pairs of songs and asks them to choose their favorite, eventually generating a personalized ranking list. The initial version of Swift Sorter focuses on Taylor Swift's discography, offering a wide range of choices specifically for Taylor Swift fans.
 
+
+## Live Site
+Visit the SwiftSorter Live Site to start ranking songs.
+https://becreativedevelopment.com/swiftsorter/
+
 ## Features
 
 Swift Sorter includes the following core features:
@@ -17,6 +22,9 @@ Swift Sorter includes the following core features:
 ## Installation
 
 1. Clone the repository or download the source code.
+2. Install the required dependencies using npm install.
+3. Run the application using npm start.
+4. Open your web browser and navigate to http://localhost:3000 to start ranking songs.
 
 ## License
 
